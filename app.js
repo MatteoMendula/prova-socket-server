@@ -23,4 +23,8 @@ var server = http.createServer(app);
 
 var io = socket.listen(server);
 
-server.listen(process.env.PORT || 8000);
+var port = process.env.PORT || 8000
+
+server.listen(port, () => {
+	console.log("listening on port "+port);
+});
